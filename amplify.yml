@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Instalando dependencias"
+        - npm ci
+    build:
+      commands:
+        - npm run build
+        - npm run lint
+        - npm test
+        - >-
+          sed -i "s/__ENV_PLACEHOLDER__/${AWS_BRANCH}/g"
+          $(find dist -type f -name '*.js')
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

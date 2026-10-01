@@ -10,6 +10,7 @@ const techs = [
 const students = [
   { initials: 'MJ', name: 'María José', lastName: 'Cordón Vasco', role: 'Estudiante' },
   { initials: 'JE', name: 'Jhoann Esteban', lastName: 'Reyes Higuera', role: 'Estudiante' },
+  { initials: 'WL', name: 'Willington', lastName: 'Londoño', role: 'Profesor' },
 ]
 
 const pipeline = [
